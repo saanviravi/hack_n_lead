@@ -12,7 +12,7 @@ def process_data():
     image_file = request.files['inputImage']
 
     # Save the image file to a desired location
-    image_path = '/path/to/save/image.png'  # Replace with your desired location
+    image_path = 'C:/Users/saanv/Downloads/python/inputImage.png '  # Replace with your desired location
     image_file.save(image_path)
 
     # Execute your backend Python code for image processing here
@@ -21,7 +21,7 @@ def process_data():
     # disease_name = detect_disease(processed_image_path)
 
     # Generate the path for the output image with disease name
-    output_image_path = '/path/to/output/image.png'  # Replace with your desired location
+    output_image_path = 'C:/Users/saanv/Downloads/python/outputImage.png'  # Replace with your desired location
     # Example code:
     # save_image_with_text(processed_image_path, disease_name, output_image_path)
 

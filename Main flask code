@@ -1,20 +1,39 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/process_data', methods=['POST'])
 def process_data():
-    # Retrieve data from the HTML form
-    data = request.form['input_data']
+    # Get the uploaded image file
+    image_file = request.files['inputImage']
 
-    # Execute your Jupyter Notebook backend code here
-    # ...
+    # Save the image file to a desired location
+    image_path = '/path/to/save/image.png'  # Replace with your desired location
+    image_file.save(image_path)
 
-    # Return the result
-    result = "Processed data: " + data
-    return result
+    # Execute your backend Python code for image processing here
+    # Example code:
+    # processed_image_path = process_image(image_path)
+    # disease_name = detect_disease(processed_image_path)
+
+    # Generate the path for the output image with disease name
+    output_image_path = '/path/to/output/image.png'  # Replace with your desired location
+    # Example code:
+    # save_image_with_text(processed_image_path, disease_name, output_image_path)
+
+    # Redirect to the output HTML page with the output image path
+    return redirect('/output?image_path=' + output_image_path)
+
+@app.route('/output')
+def output():
+    # Get the image path from the query parameter
+    image_path = request.args.get('image_path')
+
+    return render_template('output.html', image_path=image_path)
+
 if __name__ == '__main__':
     app.run(debug=True)

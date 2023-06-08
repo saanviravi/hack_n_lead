@@ -1,0 +1,42 @@
+body{
+  background-color: rgb(240,240,240);
+  font-family: 'Raleway', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+                       rgba(0, 0, 0, 0.6)),url(pexels-sohail-nachiti-807598.jpg);
+  background-size: cover;
+}
+h1 {
+    color: white;
+    font-size: 3rem;
+    padding-top: 10px;
+}
+.container
+{
+ text-align: center;
+ margin: 0 auto;
+ padding: 20px;
+ padding-left: 50px;
+}
+
+#previewImage
+{
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+input[type=submit]{
+  padding: 10px;
+  background-color: rgb(0,30,0);
+  width = 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+input[type = file]{
+  width = 100%;
+
+}
+div{
+  color: white;
+}
